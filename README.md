@@ -9,7 +9,6 @@ The project compares Linear Regression with Random Forest Regression and evaluat
 
 The dataset contains information about housing characteristics and their corresponding median house values.
 
-Main Features
 Feature	Description
 CRIM	Per-capita crime rate
 ZN	Proportion of residential land
