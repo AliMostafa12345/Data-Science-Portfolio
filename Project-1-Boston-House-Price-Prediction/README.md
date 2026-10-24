@@ -106,31 +106,7 @@ Investigate outliers and evaluate alternative preprocessing methods.
 Improve validation methodology by using a pipeline and consistent preprocessing within each cross-validation fold.
 Evaluate model generalization using additional or more recent housing data.
 Develop an interactive application for predicting house prices.
-▶️ How to Run the Project
-Option 1: Google Colab
-Open the project notebook in Google Colab.
-Upload boston.csv to the Colab environment.
-Update the dataset path if necessary.
-Run the notebook cells in order.
-Option 2: Run Locally
-Clone the repository:
-bash
-git clone <your-repository-url>
 
-Navigate to the project directory:
-bash
-cd <your-project-folder>
-
-Install the required libraries:
-bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
-
-Place boston.csv in the expected location or update the path in the notebook.
-Launch Jupyter Notebook:
-bash
-jupyter notebook
-
-Open the project notebook and execute the cells.
 👤 Author
 
 Created as part of my Data Science and Machine Learning project portfolio.
