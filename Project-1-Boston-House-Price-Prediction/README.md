@@ -1,108 +1,122 @@
 # Boston House Price Prediction
-Project Overview
 
-This project focuses on predicting house prices using machine learning techniques and the Boston Housing dataset. It explores the relationships between housing characteristics and median house values and compares the performance of Linear Regression and Random Forest regression models.
+## 📌 Project Overview
 
-Objectives
-Explore and analyze the Boston Housing dataset.
-Perform exploratory data analysis (EDA).
-Visualize the distribution of house prices and correlations between features.
-Build and evaluate regression models.
-Compare model performance using Mean Squared Error (MSE) and R² score.
-Identify important features influencing house price predictions.
-Dataset
+This project focuses on predicting house prices using machine learning techniques and the Boston Housing dataset. It explores relationships between housing characteristics and median house values and compares two regression models: Linear Regression and Random Forest Regressor.
+
+## 🎯 Objectives
+
+- Explore and analyze the Boston Housing dataset.
+- Perform Exploratory Data Analysis (EDA).
+- Visualize house price distributions and feature correlations.
+- Build and evaluate machine learning regression models.
+- Compare model performance using Mean Squared Error (MSE) and R² score.
+- Identify important features influencing house price predictions.
+
+## 📊 Dataset
 
 The project uses the Boston Housing dataset, which contains information about housing characteristics and neighborhood attributes.
 
-Target variable: MEDV — Median value of owner-occupied homes.
-Important features: RM (average number of rooms), LSTAT (lower-status population percentage), and other housing-related variables.
+- **Target variable:** `MEDV` — Median value of owner-occupied homes.
+- **Important features:** `RM` (average number of rooms), `LSTAT` (lower-status population percentage), and other housing-related variables.
+- **Dataset file:** `boston.csv`
 
-The dataset is loaded from a CSV file named boston.csv.
+## 🛠️ Technologies and Libraries
 
-Technologies and Libraries
-Python
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
-Google Colab
-Project Workflow
-1. Data Loading and Exploration
+- **Python** — Programming language
+- **Pandas** — Data manipulation and analysis
+- **NumPy** — Numerical computations
+- **Matplotlib** — Data visualization
+- **Seaborn** — Statistical visualization
+- **Scikit-learn** — Machine learning and model evaluation
+- **Google Colab** — Development environment
 
-The dataset was loaded using Pandas. Initial exploration included examining its dimensions, generating descriptive statistics, and checking for missing values.
+## 🔍 Project Workflow
 
-2. Exploratory Data Analysis
+### 1. Data Loading and Exploration
 
-Data visualization was performed using Matplotlib and Seaborn.
+- Loaded the dataset using Pandas.
+- Examined dataset dimensions using `df.shape`.
+- Generated descriptive statistics using `df.describe()`.
+- Checked missing values using `df.isnull().sum()`.
 
-A histogram with a KDE curve was used to examine the distribution of median house prices.
-A correlation heatmap was created to explore relationships between numerical features.
-3. Data Preparation
+### 2. Exploratory Data Analysis (EDA)
 
-The dataset was divided into input features and the target variable.
+- Created a histogram with a KDE curve to examine the distribution of median house prices.
+- Generated a correlation heatmap to visualize relationships between numerical features.
+- Examined patterns and potential relationships among housing variables.
 
-Features (X): All columns except MEDV.
-Target (y): MEDV.
-Train-test split: 80% training data and 20% testing data.
-Random state: 42 for reproducibility.
-4. Model Building
+### 3. Data Preparation
 
-Two machine learning regression models were trained.
+- Separated input features (`X`) and the target variable (`y`).
+- Used `MEDV` as the target variable.
+- Split the dataset into training and testing sets.
+- Used an 80:20 train-test split.
+- Set `random_state=42` for reproducibility.
 
-Linear Regression
+### 4. Model Building
 
-Used as a baseline model to predict house prices based on linear relationships between the input features and the target variable.
+#### Linear Regression
 
-Random Forest Regressor
+Linear Regression was used as the baseline model to predict house prices based on relationships between the input features and the target variable.
 
-An ensemble learning model using 200 decision trees to capture more complex relationships between housing characteristics and prices.
+#### Random Forest Regressor
 
-5. Model Evaluation
+A Random Forest regression model was trained using 200 decision trees to capture more complex relationships between housing characteristics and prices.
 
-The models were evaluated using two metrics:
+### 5. Model Evaluation
 
-Mean Squared Error (MSE): Measures the average squared difference between actual and predicted values. Lower values indicate better performance.
-R² Score: Measures how well the model explains variation in the target variable. Higher values generally indicate better performance.
-6. Feature Importance
+The models were evaluated using the following metrics:
 
-Feature importance values were extracted from the Random Forest model and visualized using a horizontal bar chart to identify influential predictors.
+- **Mean Squared Error (MSE):** Measures the average squared difference between actual and predicted values. Lower values indicate better performance.
+- **R² Score:** Measures how well the model explains the variation in the target variable. Higher values generally indicate better performance.
 
-7. Cross-Validation
+### 6. Feature Importance
 
-Five-fold cross-validation was performed to evaluate the Random Forest model across multiple data splits. The average R² score was calculated to assess model performance.
+Feature importance values were extracted from the trained Random Forest model and displayed in a horizontal bar chart to identify influential predictors.
 
-Results
+### 7. Cross-Validation
+
+Five-fold cross-validation was performed using the R² scoring metric to examine the Random Forest model's performance across multiple data splits.
+
+Feature standardization was applied using `StandardScaler` before the cross-validation evaluation.
+
+## 📈 Results
 
 The following results were obtained from the test-set evaluation:
 
-Model	Mean Squared Error (MSE)	R² Score
-Linear Regression	24.29	0.669
-Random Forest Regressor	8.51	0.884
+| Model | Mean Squared Error (MSE) | R² Score |
+|---|---:|---:|
+| Linear Regression | 24.29 | 0.669 |
+| Random Forest Regressor | 8.51 | 0.884 |
 
-The average five-fold cross-validation R² score for the Random Forest model, using standardized features, was approximately 0.627.
+The average five-fold cross-validation R² score for the Random Forest model was approximately **0.627**.
 
-Key Findings
-Random Forest outperformed Linear Regression on the test set.
-The Random Forest model achieved a lower MSE, decreasing from 24.29 to 8.51.
-The test-set R² score improved from approximately 0.67 to 0.88.
-Feature importance analysis highlighted influential variables, including RM and LSTAT.
-The cross-validation score was lower than the test-set score, indicating that model performance may vary across data splits and should be investigated further.
-Conclusion
+## 💡 Key Findings
 
-This project demonstrates the application of machine learning techniques to house price prediction.
+- Random Forest outperformed Linear Regression on the test set.
+- Random Forest achieved a lower MSE, reducing it from 24.29 to 8.51.
+- The test-set R² score improved from approximately 0.67 to 0.88.
+- Feature importance analysis highlighted influential variables, including `RM` and `LSTAT`.
+- The cross-validation score was lower than the test-set score, suggesting that model performance may vary across data splits.
 
-Based on the test-set results, the Random Forest Regressor performed better than Linear Regression, achieving lower prediction error and a higher R² score. Exploratory data analysis and feature importance visualization also helped reveal relationships between housing characteristics and predicted house prices.
+## 📝 Conclusion
 
-Further improvements could include hyperparameter tuning, more rigorous cross-validation, and testing on additional housing datasets.
+This project demonstrates how machine learning can be applied to house price prediction.
 
-Future Improvements
-Optimize model parameters using hyperparameter tuning.
-Compare additional regression algorithms, such as Gradient Boosting.
-Investigate outliers and alternative data preprocessing techniques.
-Use a consistent preprocessing pipeline during cross-validation.
-Evaluate performance on additional or more recent housing datasets.
-Develop an interactive application for house price prediction.
-Author
+Based on the test-set results, the Random Forest Regressor performed better than Linear Regression, achieving a lower prediction error and a higher R² score. Exploratory data analysis and feature importance visualization also provided insights into relationships between housing characteristics and predicted house prices.
+
+Further improvements could include hyperparameter tuning, more rigorous cross-validation, and evaluation using additional housing datasets.
+
+## 🚀 Future Improvements
+
+- Perform hyperparameter tuning using `GridSearchCV` or `RandomizedSearchCV`.
+- Compare additional regression algorithms, such as Gradient Boosting.
+- Investigate outliers and alternative preprocessing techniques.
+- Use a consistent preprocessing pipeline during cross-validation.
+- Evaluate performance on additional or more recent housing datasets.
+- Develop an interactive application for house price prediction.
+
+## 👤 Author
 
 Created as part of my Data Science and Machine Learning project portfolio.
