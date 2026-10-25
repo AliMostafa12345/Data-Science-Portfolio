@@ -385,9 +385,4 @@ This project is intended for educational and research purposes only. The model h
 
 ---
 
-## Author
-
-**Your Name**
-
-- GitHub: [Your GitHub Profile](https://github.com/your-username)
-
+ 
